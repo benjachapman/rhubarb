@@ -22,6 +22,9 @@
   "dependencies": {
     "jquery": "1.11.1",
     "lodash": "2.4.1",
-    "react": "^0.13.3"
+    "randomcolor" : "*",
+    "react": "^0.13.3",
+    "wolfy87-eventemitter": "*",
+    "velocity-animate": "^1.2.2"
   }
 }

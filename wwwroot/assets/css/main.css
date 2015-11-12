@@ -1,3 +1,88 @@
+/*
+Vendor Prefixer
+The first argument is the property. The second argument is the value for that property. Third and optional argument is the list of prefixes to use. Default value dumps all prefixes.
+@include prefix(filter, blur(42deg), webkit ms);
+@include prefix(transition, (visibility 0s, opacity 0.2s linear));
+*/
+body {
+  margin: 0; }
 
+h2 {
+  font-family: 'Lora', serif;
+  font-size: 40px;
+  text-shadow: "2px 2px black";
+  color: white; }
+
+p, a {
+  font-family: "Spinnaker", sans-serif;
+  font-size: 22px;
+  color: white; }
+
+a {
+  cursor: pointer;
+  text-decoration: underline; }
+
+.page {
+  transition-property: left;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  position: fixed; }
+  .page.page--transition-out {
+    -webkit-transition: left 2s ease, transform 2s ease, top 2s ease;
+    -moz-transition: left 2s ease, transform 2s ease, top 2s ease;
+    -ms-transition: left 2s ease, transform 2s ease, top 2s ease;
+    -o-transition: left 2s ease, transform 2s ease, top 2s ease;
+    transition: left 2s ease, transform 2s ease, top 2s ease;
+    left: 30%;
+    top: 150%;
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg); }
+  .page__holder {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+  .page__content {
+    position: relative;
+    padding: 40px 0; }
+
+.linky {
+  display: inline-block;
+  background: black;
+  position: relative;
+  border: 1px solid white;
+  overflow: hidden;
+  margin: 20px; }
+  .linky:hover {
+    opacity: 0.6; }
+  .linky__depression {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    -webkit-transition: top 0.1s ease, left 0.1s ease;
+    -moz-transition: top 0.1s ease, left 0.1s ease;
+    -ms-transition: top 0.1s ease, left 0.1s ease;
+    -o-transition: top 0.1s ease, left 0.1s ease;
+    transition: top 0.1s ease, left 0.1s ease;
+    padding: 10px 20px;
+    width: 100%; }
+  .linky__size-reserver {
+    position: relative;
+    padding: 10px 20px;
+    opacity: 0; }
+  .linky.linky--pressed {
+    opacity: 0.7; }
+    .linky.linky--pressed .linky__depression {
+      top: 4px;
+      left: 4px; }
 
 /*# sourceMappingURL=main.css.map */

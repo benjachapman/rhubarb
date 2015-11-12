@@ -82,12 +82,12 @@ module.exports = function(grunt) {
         //     }
         // },
 
-        // -- Watch
+        // -- Watch -
 
         watch: {
 
             scripts: {
-                files: ['assets/js/dev.js'],
+                files: ['assets/js/dev.js', 'assets/jsx/*.jsx', 'assets/jsx/pages/*.jsx'],
                 tasks: ['browserify'],
                 options: {
                     spawn: false,

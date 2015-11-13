@@ -4,23 +4,64 @@ The first argument is the property. The second argument is the value for that pr
 @include prefix(filter, blur(42deg), webkit ms);
 @include prefix(transition, (visibility 0s, opacity 0.2s linear));
 */
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:900,400|Raleway:400,300,800);
 body {
-  margin: 0; }
+  margin: 0;
+  color: white; }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900px;
+  font-size: 40px;
+  text-shadow: 2px 2px black; }
+
+h1 {
+  font-size: 60px;
+  text-align: center; }
 
 h2 {
-  font-family: 'Lora', serif;
   font-size: 40px;
-  text-shadow: "2px 2px black";
-  color: white; }
+  margin-bottom: 20px; }
+  @media (min-width: 600px) {
+    h2 {
+      margin-bottom: 40px; } }
 
-p, a {
-  font-family: "Spinnaker", sans-serif;
+h3 {
+  font-size: 30px; }
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   font-size: 22px;
-  color: white; }
+  margin: 0 0 20px; }
+  @media (min-width: 600px) {
+    p {
+      margin: 0 0 40px; } }
 
 a {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 22px;
   cursor: pointer;
-  text-decoration: underline; }
+  text-decoration: underline;
+  color: white;
+  text-shadow: 1px 1px black; }
+
+img {
+  display: block;
+  width: 100%;
+  margin: 30px 0px 30px;
+  -webkit-box-shadow: 2px 2px 2px #000;
+  -moz-box-shadow: 2px 2px 2px #000;
+  box-shadow: 2px 2px 2px #000; }
+  @media (min-width: 600px) {
+    img {
+      width: 60%;
+      float: left;
+      margin: 0px 40px 40px 0px; }
+      img.right {
+        float: right;
+        margin: 0px 0px 40px 40px; } }
 
 .page {
   transition-property: left;
@@ -29,6 +70,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: 30;
+  color: white;
   position: fixed; }
   .page.page--transition-out {
     -webkit-transition: left 2s ease, transform 2s ease, top 2s ease;
@@ -52,7 +94,10 @@ a {
     transform-style: preserve-3d; }
   .page__content {
     position: relative;
-    padding: 40px 0; }
+    padding: 0 20px 150px; }
+    @media (min-width: 600px) {
+      .page__content {
+        padding: 0 60px 200px; } }
 
 .linky {
   display: inline-block;
@@ -60,7 +105,9 @@ a {
   position: relative;
   border: 1px solid white;
   overflow: hidden;
-  margin: 20px; }
+  margin: 10px 0px; }
+  .linky:nth-child(2) {
+    margin: 10px 20px; }
   .linky:hover {
     opacity: 0.6; }
   .linky__depression {
@@ -74,7 +121,10 @@ a {
     -o-transition: top 0.1s ease, left 0.1s ease;
     transition: top 0.1s ease, left 0.1s ease;
     padding: 10px 20px;
-    width: 100%; }
+    width: 100%;
+    -webkit-box-shadow: inset 1px 1px 1px #000000;
+    -moz-box-shadow: inset 1px 1px 1px #000000;
+    box-shadow: inset 1px 1px 1px #000000; }
   .linky__size-reserver {
     position: relative;
     padding: 10px 20px;
@@ -82,7 +132,14 @@ a {
   .linky.linky--pressed {
     opacity: 0.7; }
     .linky.linky--pressed .linky__depression {
-      top: 4px;
-      left: 4px; }
+      top: 2px;
+      left: 3px; }
+
+.nav {
+  padding: 3px 60px;
+  text-align: center;
+  -webkit-box-shadow: 0px 6px 11px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 6px 11px 0px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 6px 11px 0px rgba(0, 0, 0, 0.45); }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,13 +1,10 @@
 window.$ = require('jquery');
 var React = require('react');
-var ScrollMagic = require("scrollmagic");
-require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap');
-var gsap = require("gsap");
 var randomcolor = require("randomcolor");
 var Greenie = require("./pages/greenie.jsx");
 var Bluey = require("./pages/bluey.jsx");
-
-var Red = require("./pages/red.jsx")
+var Red = require("./pages/red.jsx");
+var Nav = require("./Nav.jsx");
 
 var Page = React.createClass({
     getInitialState: function(){
@@ -19,9 +16,6 @@ var Page = React.createClass({
     render: function() {
         var backgroundStyle = {
                 background: this.props.darkColor,
-                fontSize: "40px",
-                color: "white",
-                textAlign: "center",
                 zIndex: this.props.z
             },
             i = 0;
@@ -40,6 +34,7 @@ var Page = React.createClass({
 
         return (
             <div className={this.props.className} style={backgroundStyle}>
+                <Nav key={this.i++} {...this.props} />
                 <div className="page__holder">
                     {this.page}
                 </div>

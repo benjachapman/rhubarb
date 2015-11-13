@@ -12,3 +12,24 @@ The first argument is the property. The second argument is the value for that pr
       }
       #{$property}: #{$value};
 }
+
+$tablet-width: 600px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin notMobile {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}

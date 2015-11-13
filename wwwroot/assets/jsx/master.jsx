@@ -17,11 +17,9 @@ var Master = React.createClass({
         this.pageOneKey = 0;
         this.pageTwoKey = 1000;
         this.z = 1000000;
-        this.pagesToRender=[];
         return({
-            activeSlot: 1,
-            slotOnePage: "bluey",
-            slotTwoPage: "greenie",
+            slotOnePage: "greenie",
+            slotTwoPage: "bluey",
             slotOneColor: randomcolor({luminosity:"dark"}),
             slotTwoColor: randomcolor({luminosity:"dark"})
         });
@@ -57,7 +55,7 @@ var Master = React.createClass({
             } else {
                 self.pageTwoKey++;
             }
-        },2000)
+        },900)
     },
     render: function() {
         var self = this,
@@ -81,8 +79,8 @@ var Master = React.createClass({
 
         return (
             <div className="masta">
-                <Page key={this.pageOneKey} z={z1} darkColor={this.state.slotOneColor} className={pageOneClasses} goToLink={this.goToLink} slot={1} transition={transition} page={this.state.slotOnePage}/>
-                <Page key={this.pageTwoKey} z={z2} darkColor={this.state.slotTwoColor}  className={pageTwoClasses} goToLink={this.goToLink} slot={2} transition={transition} page={this.state.slotTwoPage}/>
+                <Page key={this.pageOneKey} pageId={this.pageOneKey} z={z1} darkColor={this.state.slotOneColor} className={pageOneClasses} goToLink={this.goToLink} slot={1} transition={transition} page={this.state.slotOnePage}/>
+                <Page key={this.pageTwoKey} pageId={this.pageTwoKey} z={z2} darkColor={this.state.slotTwoColor}  className={pageTwoClasses} goToLink={this.goToLink} slot={2} transition={transition} page={this.state.slotTwoPage}/>
             </div>
         );
     }
